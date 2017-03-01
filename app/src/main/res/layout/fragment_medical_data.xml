@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_my_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_class"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/text_size_24_headline"
+            android:entries="@array/medical_class"
+            android:background="@mipmap/spin_bg_class"
+            />
+        <!--
+        <LinearLayout
+            android:id="@+id/table_title"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/medical_table_title_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_16_subhead"
+                android:textStyle="bold"
+                android:text="测试1"
+                android:textColor="@color/white"
+                android:drawableRight="@mipmap/drop_down"/>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/medical_table_title_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_16_subhead"
+                android:textStyle="bold"
+                android:text="测试2"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout> --><!--android:drawableRight="@mipmap/drop_down"-->
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/medical_refresh_layout"
+            android:layout_below="@id/spinner_class"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/medical_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <View
+            android:id="@+id/mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#c5000000"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

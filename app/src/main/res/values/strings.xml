@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">虚拟医院</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="menu_settings">Settings</string>
+    <!-- splash页-->
+    <string name="splash_introduce">辅助诊疗系统</string>
+    <string name="splash_copyright">Copyright &#169; 2016 SimuTech Inc.. All Right Reserved</string>
+    <string name="splash_version_name">V %1$s</string>
+    <!-- lead页-->
+    <string name="lead_goto_home">开始使用</string>
+
+    <!--辅助诊断-->
+    <string name="diagnose_title">辅助诊断</string>
+    <string name="diagnose_submit">进行诊断</string>
+    <string name="diagnose_switch">诊断库:</string>
+    <string name="diagnose_sex">性\u3000别：</string>
+    <string name="diagnose_marriage_state">婚\u3000育：</string>
+    <string name="diagnose_age">年\u3000龄：</string>
+    <string name="diagnose_man">男</string>
+    <string name="diagnose_woman">女</string>
+    <!--主页-->
+    <string name="home_title">HPV辅助诊断系统</string>
+    <string name="home_welcome">登录人：%1$s医生</string>
+    <string name="home_doc_keshi">科  室：%1$s</string>
+    <string name="load_no_activation">请先激活你的账户!</string>
+    <string name="activation_sucess">激活成功!</string>
+
+    <string name="home_head_photo">拍照!</string>
+    <string name="home_head_select">从手机相册中选取</string>
+    <string name="home_pass_error">账号或密码错误!</string>
+    <string name="home_not_active">账号未激活，请先激活后再使用！</string>
+    <string name="home_not_bangding">当前设备与绑定的设备编号不一致，请联系管理员!</string>
+    <string name="home_account_invalid">账号已过期，请联系管理员！</string>
+
+    <!--医学资料库-->
+    <string name="medical_title">医学资料库</string>
+    <string name="medical_table_title_left">知识编号</string>
+    <string name="medical_table_title_right">标题</string>
+    <!--病例库-->
+    <string name="case_title">病历库</string>
+    <string name="case_table_title_name">编号</string>
+    <string name="case_table_title_age">年龄</string>
+    <string name="case_table_title_sex">性别</string>
+    <string name="case_table_title_class">科室</string>
+    <string name="case_table_title_time">就诊时间</string>
+    <!--诊断书行解释-->
+    <string name="explain_overview">\u3000\u3000%1$s</string>
+    <string name="explain_overview_title">知识内容</string>
+    <!--基本概述-->
+    <string name="case_detail_title">病历内容</string>
+    <!--诊断详情-->
+    <string name="result_title">诊断结果</string>
+    <string name="result_base_info">基本信息</string>
+    <string name="result_diagnose_info">诊断选项</string>
+    <string name="result_jiance_info">治疗项</string>
+    <string name="result_doctor_advice">诊断结论</string>
+    <string name="result_zhishi_info">知识点</string>
+    <string name="result_code">病理推送编码:%1$s</string>
+    <string name="result_item_label">%1$s：</string>
+    <!--往期追逆-->
+    <string name="history_title">往期追溯</string>
+    <string name="history_add">增加</string>
+    <string name="history_cancel">取消</string>
+    <!--公共字串-->
+    <string name="load_fail">加载失败，请稍后再试</string>
+    <string name="item_lable">%1$s：</string>
+
+    <string name="acty_user_register_nick_name">用户名:</string>
+    <string name="acty_user_register_name">姓名:</string>
+    <string name="acty_user_register_pass">密码:</string>
+    <string name="acty_user_register_sec_pass">再次输入密码:</string>
+    <string name="acty_user_register_phone_number">手机号:</string>
+    <string name="acty_user_register_weixin">微信:</string>
+    <string name="acty_user_register_qq">QQ:</string>
+    <string name="acty_user_register_email">邮箱:</string>
+    <string name="acty_user_register_detail_address">详细地址:</string>
+    <string name="acty_user_register_sex">性别:</string>
+    <string name="acty_user_register_birthday">生日:</string>
+    <string name="acty_user_register_date">年/月/日</string>
+    <string name="acty_user_register_submit">提交</string>
+    <string name="title_activity_register">注册</string>
+    <string name="action_settings">Settings</string>
+
+   <string name="case_submit">病历保存</string>
+    <string name="selection">选中%s个</string>
+    <string name="select_all">全选</string>
+    <string name="unselect_all">全不选</string>
+
+    <string name="media_code_example">3hbcs</string>
+    <string name="media_title_example">2015美国心脏协会心肺复苏与心血管急救更新指南解读之一概述及基础</string>
+    <string name="media_view_detail">查看详情</string>
+    <string name="media_data_code"> NO:%1$s</string>
+</resources>

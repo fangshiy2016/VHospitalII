@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00AEEF</color>
+    <color name="colorPrimaryDark">#158AD4</color>
+    <color name="colorAccent">#12998b</color>
+    <color name="window_background">#FFFFFF</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="blue">#50a2cf</color>
+    <color name="font_color">#444444</color>
+    <color name="head_font_color">#487EA2</color>
+    <color name="font_color_dark">#B4B4B4</color>
+    <color name="font_color_yellow">#FFEB3C</color>
+    <color name="btn_bg">#5376c1</color>
+    <color name="btn_deep_bg">#4a6ebe</color>
+    <color name="hospital_text_blue">#51a1cf</color>
+    <color name="table_data_row_even">#f5f5f5</color>
+    <color name="table_data_row_odd">#ffffff</color>
+    <color name="separation_line">#cccccc</color>
+    <color name="separation_line2">#078CD4</color>
+    <color name="window_deep_bg">#f0f0f0</color>
+    <color name="window_deep_bg_diagnose">#C3E3F4</color>
+    <color name="transparent_background">#10000000</color>
+    <color name="spiner_bg">#5376c1</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+</resources>

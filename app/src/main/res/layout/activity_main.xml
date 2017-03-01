@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/realtabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/main_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_home"
+            style="@style/main_footer_bar_radio"
+            android:checked="true"
+            android:drawableTop="@mipmap/tab_home"
+            android:text="主页" />
+
+        <RadioButton
+            android:id="@+id/main_diagnose"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@mipmap/tab_zhenduan"
+            android:text="诊断" />
+
+        <RadioButton
+            android:id="@+id/main_medical_data"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@mipmap/tab_ziliao"
+            android:text="资料库" />
+
+        <RadioButton
+            android:id="@+id/main_case_db"
+            style="@style/main_footer_bar_radio"
+            android:drawableTop="@mipmap/tab_bingli"
+            android:text="病历库" />
+
+    </RadioGroup>
+
+</LinearLayout>

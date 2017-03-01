@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/diagnose_items">
+
+        <TextView
+            android:id="@+id/diagnose_item_lable"
+            style="@style/diagnose_table_text"
+            android:text="HVS-L-LGS："/>
+        <ImageView
+            android:id="@+id/diagnose_item_unselect"
+            style="@style/diagnose_img_unselect"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/diagnose_item_question"
+            style="@style/diagnose_img_question"/>
+
+        <ImageView
+            android:id="@+id/diagnose_item_more"
+            style="@style/diagnose_img_more"/>
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <!--style="@style/diagnose_items"> -->
+
+
+        <com.yuyang.VRHospital.view.NoScroolGridView
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:verticalSpacing="2dip"
+            android:numColumns="3"
+            android:horizontalSpacing="2dip"
+            android:gravity="center"
+            android:columnWidth="75dip"
+            android:scrollbarStyle="insideOverlay"
+            android:stretchMode="columnWidth"
+            android:id="@+id/gridview_image"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/separation_line2"/>
+</LinearLayout>

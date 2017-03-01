@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/diagnose_items">
+
+        <TextView
+            android:id="@+id/diagnose_item_lable"
+            style="@style/diagnose_table_text"
+            android:text="著名医学专家谈健康和长寿的新理念，念念念长寿的新理念，念念念"/>
+
+        <ImageView
+            android:id="@+id/diagnose_item_unselect"
+            style="@style/diagnose_img_unselect"/>
+
+        <ImageView
+            android:id="@+id/diagnose_item_question"
+            style="@style/diagnose_img_question"/>
+
+        <ImageView
+            android:id="@+id/diagnose_item_more"
+            style="@style/diagnose_img_more"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/diagnose_item_content_bg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="4dp">
+
+        <FrameLayout
+            android:id="@+id/diagnose_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/item_layout_bg"
+            >
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/separation_line2"/>
+</LinearLayout>

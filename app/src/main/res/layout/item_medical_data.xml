@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/medical_item_bg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/medical_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="@string/media_title_example"
+            android:textSize="@dimen/text_size_16_subhead"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/medical_item_code"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:id="@+id/medical_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:text="@string/media_code_example"
+            android:textColor="@color/font_color_dark"
+            android:textSize="@dimen/text_size_14_body"/>
+
+        <Button
+            android:id="@+id/media_view_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/media_view_detail"
+            android:textSize="@dimen/text_size_14_body"
+            android:focusable="false"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/blue"
+            android:background="@drawable/btn_view_detail"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/separation_line"/>
+
+</LinearLayout>

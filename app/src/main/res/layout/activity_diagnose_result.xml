@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <!--<com.facebook.drawee.view.SimpleDraweeView-->
+                    <ImageView
+                        android:id="@+id/result_qr_code"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="#4e000000"
+                        android:src="@mipmap/img_loading"/>
+
+                    <TextView
+                        android:id="@+id/result_code"
+                        style="@style/result_text"
+                        android:gravity="bottom"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/text_size_14_body"
+                        android:text="病历推送码:XE23X"/>
+
+                </LinearLayout>
+                <!--
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/right_blue_note"
+                            android:layout_marginRight="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/note"
+                            android:layout_alignBaseline="@id/note"
+                            android:textColor="@color/hospital_text_blue"
+                            android:textSize="@dimen/text_size_20_title"
+                            android:text="病例关联二维码"/>
+                    </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginBottom="5dp"
+                       android:layout_marginTop="5dp">
+                       <TextView
+                           style="@style/result_text"
+                           android:text=""/>
+                       <TextView
+                           android:id="@+id/result_sex"
+                           style="@style/result_text"/>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginBottom="5dp"
+                       android:layout_marginTop="5dp">
+                       <TextView
+                           style="@style/result_text"
+                           android:text=""/>
+                       <TextView
+                           android:id="@+id/result_marriage_state"
+                           style="@style/result_text"/>
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="5dp">
+                       <TextView
+                           style="@style/result_text"
+                           android:text=""/>
+                       <TextView
+                           android:id="@+id/result_age"
+                           style="@style/result_text"/>
+                   </LinearLayout>
+
+               </LinearLayout>
+                -->
+           </LinearLayout>
+
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:background="@color/separation_line"/>
+
+           <LinearLayout
+               android:id="@+id/result_info_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="5dp"
+               android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="5dp"
+                   android:gravity="center_vertical">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@mipmap/right_blue_note"
+                       android:layout_marginRight="10dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_toRightOf="@id/note"
+                       android:layout_alignBaseline="@id/note"
+                       android:textColor="@color/hospital_text_blue"
+                       android:textSize="@dimen/text_size_18_title_small"
+                       android:text="@string/result_diagnose_info"/>
+               </LinearLayout>
+               <TextView
+                   android:id="@+id/result_zhenduan_info"
+                   style="@style/result_text"
+                   android:layout_marginBottom="5dp"
+                   android:layout_marginTop="5dp"
+                   android:lineSpacingMultiplier="1.2"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:background="@color/separation_line"/>
+        <LinearLayout
+            style="@style/result_items_bg">
+            <TextView
+                android:id="@+id/zhenduan_result_title"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingMultiplier="1.2"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/text_size_18_title_small"/>
+            <ImageView
+                android:id="@+id/result_question"
+                style="@style/diagnose_img_question"/>
+        </LinearLayout>
+          <!--
+           <LinearLayout
+               android:id="@+id/result_zhiliao_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="5dp"
+                   android:gravity="center_vertical">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@mipmap/right_blue_note"
+                       android:layout_marginRight="10dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_toRightOf="@id/note"
+                       android:layout_alignBaseline="@id/note"
+                       android:textColor="@color/hospital_text_blue"
+                       android:textSize="@dimen/text_size_14_body"
+                       android:text="@string/result_jiance_info"/>
+               </LinearLayout>
+
+           </LinearLayout>
+
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:background="@color/separation_line"/>
+
+            -->
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginBottom="5dp"
+               android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="5dp"
+                   android:gravity="center_vertical">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@mipmap/right_blue_note"
+                       android:layout_marginRight="10dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_toRightOf="@id/note"
+                       android:layout_alignBaseline="@id/note"
+                       android:textColor="@color/hospital_text_blue"
+                       android:textSize="@dimen/text_size_18_title_small"
+                       android:text="@string/result_doctor_advice"/>
+               </LinearLayout>
+
+               <TextView
+                   android:id="@+id/result_doctor_advice"
+                   style="@style/result_text"
+                   android:layout_marginBottom="5dp"
+                   android:layout_marginTop="5dp"
+                   android:lineSpacingMultiplier="1.2"/>
+
+           </LinearLayout>
+            <!--
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="5dp"
+                   android:gravity="center_vertical">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@mipmap/right_blue_note"
+                       android:layout_marginRight="10dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_toRightOf="@id/note"
+                       android:layout_alignBaseline="@id/note"
+                       android:textColor="@color/hospital_text_blue"
+                       android:textSize="@dimen/text_size_18_title_small"
+                       android:text="@string/result_zhishi_info"/>
+               </LinearLayout>
+
+               <TextView
+                   android:id="@+id/result_zhishi_info"
+                   style="@style/result_text"
+                   android:layout_marginBottom="5dp"
+                   android:layout_marginTop="5dp"
+                   android:lineSpacingMultiplier="1.2"/>
+
+           </LinearLayout>
+           -->
+           <Button
+               android:id="@+id/case_submit"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginBottom="10dp"
+               android:text="@string/case_submit"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:textSize="@dimen/text_size_18_title_small"
+               android:textColor="@color/white"
+               android:background="@drawable/btn_submit_select"/>
+       </LinearLayout>
+   </ScrollView>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="marriage_state">
+        <item>--请选择--</item>
+        <item>未婚未育</item>
+        <item>未婚已育</item>
+        <item>已婚未育</item>
+        <item>已婚已育</item>
+    </string-array>
+
+    <string-array name="medical_class">
+        <item>全部医学资料</item>
+        <item>HPV预防资料库</item>
+        <item>HPV治疗资料库</item>
+        <item>HPV康复资料库</item>
+    </string-array>
+
+    <string-array name="order">
+        <item>生序</item>
+        <item>降序</item>
+    </string-array>
+</resources>

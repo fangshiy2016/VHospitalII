@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/layout_my_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_deep_bg_diagnose">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <!--
+             <LinearLayout
+                 style="@style/diagnose_items"
+                 android:gravity="center">
+                 <TextView
+                     style="@style/diagnose_table_text"
+                     android:text="@string/diagnose_sex"/>
+
+                 <RadioGroup
+                     android:id="@+id/diagnose_sex"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="horizontal"
+                     android:gravity="center">
+                     <RadioButton
+                         android:id="@+id/diagnose_man"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="30dp"
+                         android:textSize="16sp"
+                         android:text="@string/diagnose_man"/>
+                     <RadioButton
+                         android:id="@+id/diagnose_woman"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textSize="16sp"
+                         android:text="@string/diagnose_woman"/>
+                 </RadioGroup>
+             </LinearLayout>
+
+             <View android:layout_height="1px"
+                 android:layout_width="match_parent"
+                 android:background="@color/separation_line"/>
+             -->
+                       <LinearLayout
+                           style="@style/diagnose_items">
+                           <TextView
+                               style="@style/diagnose_table_bigtext"
+                               android:text="@string/diagnose_switch"/>
+                           <FrameLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="1"
+                               android:background="@drawable/item_layout_bg"
+                               android:padding="2dp">
+                               <android.support.v7.widget.AppCompatSpinner
+                                   android:id="@+id/diagnose_zhenduan_list"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="30dp"
+                                   android:popupBackground="@color/spiner_bg"
+                                   android:textSize="@dimen/text_size_24_headline"
+                                   android:textColor="@color/white"
+                                   android:background="@mipmap/mode_list_bg"/>
+                           </FrameLayout>
+                           <ImageView
+                               android:id="@+id/quick_diagnose_temp"
+                               style="@style/diagnose_img_more"/>
+                       </LinearLayout>
+
+                       <View android:layout_height="1px"
+                           android:layout_width="match_parent"
+                           android:background="@color/separation_line2"/>
+            <!--
+            <LinearLayout
+                style="@style/diagnose_items">
+                <TextView
+                    style="@style/diagnose_table_text"
+                    android:text="@string/diagnose_age"/>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/item_layout_bg"
+                    android:padding="2dp">
+                    <EditText
+                        android:id="@+id/diagnose_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:background="@null"/>
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/diagnose_select_step"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.19"
+                    android:layout_gravity="center"
+                    android:text="@string/diagnose_switch"
+                    android:textSize="@dimen/text_size_18_title_small"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_submit_select"/>
+            </LinearLayout>
+             -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/diagnose_item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/diagnose_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/diagnose_submit"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="@dimen/text_size_18_title_small"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_submit_select"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
