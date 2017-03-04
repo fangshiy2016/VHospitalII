@@ -3,10 +3,15 @@ package com.yuyang.VRHospital.view.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
+import android.net.Uri;
+import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuyang.VRHospital.BaseActivity;
@@ -15,9 +20,14 @@ import com.yuyang.VRHospital.bean.LoginBean;
 import com.yuyang.VRHospital.bean.zhenDuanTemplate;
 import com.yuyang.VRHospital.cache.sp.SPDao;
 import com.yuyang.VRHospital.cache.sp.SPKey;
+import com.yuyang.VRHospital.network.http.BaseHttp;
+import com.yuyang.VRHospital.presenter.CachePresenterImpl;
 import com.yuyang.VRHospital.presenter.LoginPresenterImpl;
+import com.yuyang.VRHospital.utils.ImageLoaderUtils;
+import com.yuyang.VRHospital.view.CircleImageView;
 import com.yuyang.VRHospital.view.activity.iView.ILoginActivity;
 
+import java.io.File;
 import java.util.List;
 
 import butterknife.Bind;
@@ -28,6 +38,11 @@ import butterknife.OnClick;
  */
 public class LoginActivity extends BaseActivity implements ILoginActivity {
 
+    @Bind(R.id.toolbar_title)
+    TextView title;
+    @Bind(R.id.toolbar_back)
+    ImageView mToolbarBack;
+
     @Bind(R.id.et_user_email)
     EditText user_eamil;
     @Bind(R.id.et_user_password)
@@ -36,7 +51,14 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     @Bind(R.id.btn_register)
     Button btnRegister;
 
+    @Bind(R.id.frag_doc_mine_head)
+    CircleImageView docHeaderImage;
+
+    @Bind(R.id.home_doc_name)
+    TextView mUserName;
+
     ProgressDialog progressDialog;
+    private CachePresenterImpl cachePresenter;
     private LoginPresenterImpl loginPresenter;
 
     @Override
@@ -47,8 +69,9 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     @Override
     public void initViews() {
         loginPresenter = new LoginPresenterImpl(this);
+        cachePresenter = new CachePresenterImpl();
         progressDialog = new ProgressDialog(this);
-        getSupportActionBar().setTitle("登录");
+        title.setText(R.string.login_bar_title);
         btnRegister.setVisibility(View.INVISIBLE);
 
         String usercode = SPDao.getSharedPreferences(SPKey.USER_CODE, "");
@@ -56,7 +79,14 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
         user_eamil.setText(usercode);
         user_pass.setText(password);
 
+        String headPath = SPDao.getSharedPreferences(SPKey.HEADER_IMAGE, "");
+        if(!headPath.isEmpty()){
+            docHeaderImage.setImageURI(Uri.fromFile(new File(headPath)));
+        }
 
+
+        mUserName.setText(SPDao.getSharedPreferences(SPKey.USER_NAME, ""));
+        mToolbarBack.setVisibility(View.VISIBLE);
     }
 
     private void toastMsg(String msg) {
@@ -107,12 +137,14 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
         SPDao.saveSharedPreferences(SPKey.USER_CODE,  user.getResult().getCode());
         //SPDao.saveSharedPreferences(SPKey.PASSWORD,   user.getResult().getPassWord());
 
+        mUserName.setText(getResources().getString(R.string.home_welcome, user.getResult().getName()));
         SPDao.saveSharedPreferences(SPKey.USER_KESHI,    user.getResult().getProfession());
         SPDao.saveSharedPreferences(SPKey.IS_ACTIVATION, Integer.parseInt(user.getCode()));
 
+        String localPath = ImageLoaderUtils.getHeadPicPath();
         String headerImage = user.getResult().getHeaderImage();
         if(headerImage != null){
-            SPDao.saveSharedPreferences(SPKey.HEADER_IMAGE, headerImage);
+            cachePresenter.downloadImage(headerImage, localPath);
         }
 
         SPDao.saveObject(SPKey.ZHENDUN_TEMPLATES, user.getResult());

@@ -36,8 +36,12 @@ public class ImageLoaderUtils {
         Glide.with(context).load(url).error(defaultimage).placeholder(defaultimage).listener(listener).into(view);
     }
 
-    public static String getHeadPicPath(Context context) {
-        String cacheHeaderPath = Environment.getExternalStorageDirectory() + "/VHospital";
+    public static String getHeadPicPath() {
+        String cacheHeaderPath = Environment.getExternalStorageDirectory() + "/VHospital/HeaderImage";
+        File f = new File(cacheHeaderPath);
+        if (!f.exists()) {
+            f.mkdir();
+        }
        return cacheHeaderPath;
     }
 }

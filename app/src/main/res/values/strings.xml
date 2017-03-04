@@ -9,6 +9,9 @@
     <!-- lead页-->
     <string name="lead_goto_home">开始使用</string>
 
+    <!-- 登陆页页-->
+    <string name="login_bar_title">登陆页</string>
+
     <!--辅助诊断-->
     <string name="diagnose_title">辅助诊断</string>
     <string name="diagnose_submit">进行诊断</string>
