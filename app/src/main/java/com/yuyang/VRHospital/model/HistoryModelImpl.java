@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by yuyang on 2016/4/24.
  */
-public class HistoryModelImple implements IHistoryModel {
+public class HistoryModelImpl implements IHistoryModel {
     @Override
     public void loadHistoryContent(String tag, BaseListener callBack) {
         Map<String,String> params = new HashMap<>();

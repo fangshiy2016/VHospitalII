@@ -24,11 +24,11 @@ public class ResultBean  extends BaseBean implements Serializable{
         private String content;
 
         //结构部分
-        private List<JianCeInfo> jianCeXiangList;
-        private List<ZhiLiaoInfo> zhiLiaoXiangList;
-        private KeshiInfo  keShiModel;
+        private List<JianCeBean> jianCeXiangList;
+        private List<ZhiLiaoBean> zhiLiaoXiangList;
+        private KeshiBean keShiModel;
         private JiuYiTerm  jiuYiTermModel;
-        private ZhiShiInfo zhiShiModel;
+        private ZhiShiBean zhiShiModel;
 
 
         //private String jiuYiTerm;
@@ -69,11 +69,11 @@ public class ResultBean  extends BaseBean implements Serializable{
             this.content = content;
         }
 
-        public KeshiInfo getKeShiModel() {
+        public KeshiBean getKeShiModel() {
             return keShiModel;
         }
 
-        public void setKeShiModel(KeshiInfo keShiModel) {
+        public void setKeShiModel(KeshiBean keShiModel) {
             this.keShiModel = keShiModel;
         }
 
@@ -85,148 +85,29 @@ public class ResultBean  extends BaseBean implements Serializable{
             this.jiuYiTermModel = jiuYiTermModel;
         }
 
-        public ZhiShiInfo getZhiShiModel() {
+        public ZhiShiBean getZhiShiModel() {
             return zhiShiModel;
         }
 
-        public void setZhiShiModel(ZhiShiInfo zhiShiModel) {
+        public void setZhiShiModel(ZhiShiBean zhiShiModel) {
             this.zhiShiModel = zhiShiModel;
         }
 
-        public List<JianCeInfo> getJianCeXiangList() {
+        public List<JianCeBean> getJianCeXiangList() {
             return jianCeXiangList;
         }
 
-        public void setJianCeXiangList(List<JianCeInfo> jianCeXiangList) {
+        public void setJianCeXiangList(List<JianCeBean> jianCeXiangList) {
             this.jianCeXiangList = jianCeXiangList;
         }
 
-        public List<ZhiLiaoInfo> getZhiLiaoXiangList() {
+        public List<ZhiLiaoBean> getZhiLiaoXiangList() {
             return zhiLiaoXiangList;
         }
 
-        public void setZhiLiaoXiangList(List<ZhiLiaoInfo> zhiLiaoXiangList) {
+        public void setZhiLiaoXiangList(List<ZhiLiaoBean> zhiLiaoXiangList) {
             this.zhiLiaoXiangList = zhiLiaoXiangList;
         }
 
-        /*
-        public String getJiuYiTerm() {
-            return jiuYiTerm;
-        }
-
-        public void setJiuYiTerm(String jiuYiTerm) {
-            this.jiuYiTerm = jiuYiTerm;
-        }
-
-        public String getKeShi() {
-            return keShi;
-        }
-
-        public void setKeShi(String keShi) {
-            this.keShi = keShi;
-        }
-
-        public String getJianCeXiang() {
-            return jianCeXiang;
-        }
-
-        public void setJianCeXiang(String jianCeXiang) {
-            this.jianCeXiang = jianCeXiang;
-        }
-
-        public String getZhiLiaoXiang() {
-            return zhiLiaoXiang;
-        }
-
-        public void setZhiLiaoXiang(String zhiLiaoXiang) {
-            this.zhiLiaoXiang = zhiLiaoXiang;
-        }
-
-        public String getZhiShiCode() {
-            return zhiShiCode;
-        }
-
-        public void setZhiShiCode(String zhiShiCode) {
-            this.zhiShiCode = zhiShiCode;
-        }
-        */
     }
-    /*
-    private String sex;
-    private String age;
-    private String marriage_state;
-    private String qr_code;
-    private String code;
-    private String doctor_advice;
-    private List<ResultItemBean> items;
-
-    public ResultBean() {
-    }
-
-    public ResultBean(String sex, String age, String marriage_state, String qr_code, String code, String doctor_advice, List<ResultItemBean> items) {
-        this.sex = sex;
-        this.age = age;
-        this.marriage_state = marriage_state;
-        this.qr_code = qr_code;
-        this.code = code;
-        this.doctor_advice = doctor_advice;
-        this.items = items;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getMarriage_state() {
-        return marriage_state;
-    }
-
-    public void setMarriage_state(String marriage_state) {
-        this.marriage_state = marriage_state;
-    }
-
-    public String getQr_code() {
-        return qr_code;
-    }
-
-    public void setQr_code(String qr_code) {
-        this.qr_code = qr_code;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getDoctor_advice() {
-        return doctor_advice;
-    }
-
-    public void setDoctor_advice(String doctor_advice) {
-        this.doctor_advice = doctor_advice;
-    }
-
-    public List<ResultItemBean> getItems() {
-        return items;
-    }
-
-    public void setItems(List<ResultItemBean> items) {
-        this.items = items;
-    }
-    */
 }

@@ -19,16 +19,7 @@ public class MedicalDataModelImpl implements IMedicalDataModel {
     @Override
     public void loadMedical(QueryZhishiContionBean conditionBean, BaseListener callBack) {
 
-        //Map<String, String> params = new HashMap<>();
-
-        //{"pageIndex":1,"pageSize":10,"order":"desc"}
-        //if(current_page > 0) params.put(ParamsConstants.PAGE_INDEX, Integer.toString(current_page));
-        //if(pageSize > 0) params.put(ParamsConstants.PAGE_SIZE, Integer.toString(pageSize));
-        //if(order != null) params.put(ParamsConstants.ORDER_BY, order);
-        //params = ParamsManage.addCommonParams(params);
-
         String  jsonCondition = JSON.toJSONString(conditionBean);
-
         Http.postJson(Url.URL_ZHISHI_QUERY, jsonCondition/*"{\"pageIndex\":1,\"pageSize\":10}"*/, callBack);
     }
 

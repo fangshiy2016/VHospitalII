@@ -24,7 +24,7 @@ public class MedicalDataBean extends BaseBean {
         int    pageTotal;
         int    pageSize;
         int    recordTotal;
-        List<ZhiShiInfo> data;
+        List<ZhiShiBean> data;
 
         public int getPageIndex() {
             return pageIndex;
@@ -58,11 +58,11 @@ public class MedicalDataBean extends BaseBean {
             this.recordTotal = recordTotal;
         }
 
-        public List<ZhiShiInfo> getData() {
+        public List<ZhiShiBean> getData() {
             return data;
         }
 
-        public void setData(List<ZhiShiInfo> data) {
+        public void setData(List<ZhiShiBean> data) {
             this.data = data;
         }
     }

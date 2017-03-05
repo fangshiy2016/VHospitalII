@@ -1,6 +1,5 @@
 package com.yuyang.VRHospital.bean;
 
-import com.yuyang.VRHospital.bean.ConditionInfo;
 /**
  * Created by fanshy on 2016/7/1.
  */
@@ -9,7 +8,7 @@ public class QueryZhishiContionBean {
     int             pageIndex;
     int             pageSize;
     String          order;
-    ConditionInfo    conditions;
+    ConditionBean conditions;
 
     public int getPageIndex() {
         return pageIndex;
@@ -35,11 +34,11 @@ public class QueryZhishiContionBean {
         this.order = order;
     }
 
-    public ConditionInfo getConditions() {
+    public ConditionBean getConditions() {
         return conditions;
     }
 
-    public void setConditions(ConditionInfo conditions) {
+    public void setConditions(ConditionBean conditions) {
         this.conditions = conditions;
     }
 }

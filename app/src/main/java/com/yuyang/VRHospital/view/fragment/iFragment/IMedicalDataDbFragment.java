@@ -1,8 +1,7 @@
 package com.yuyang.VRHospital.view.fragment.iFragment;
 
 import com.yuyang.VRHospital.IBaseInterface;
-import com.yuyang.VRHospital.bean.MedicalDataBean;
-import com.yuyang.VRHospital.bean.ZhiShiInfo;
+import com.yuyang.VRHospital.bean.ZhiShiBean;
 
 import java.util.List;
 
@@ -12,9 +11,9 @@ import java.util.List;
 public interface IMedicalDataDbFragment extends IBaseInterface {
     void setCanLoadMore(int state);
 
-    void setListData(List<ZhiShiInfo> result);
+    void setListData(List<ZhiShiBean> result);
 
-    void addListData(List<ZhiShiInfo> result);
+    void addListData(List<ZhiShiBean> result);
 
     void setQueryReturn();
 }

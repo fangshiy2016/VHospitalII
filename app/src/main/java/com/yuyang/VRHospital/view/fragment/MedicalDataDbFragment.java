@@ -7,24 +7,19 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuyang.VRHospital.BaseFragment;
 import com.yuyang.VRHospital.R;
-import com.yuyang.VRHospital.bean.MedicalDataBean;
-import com.yuyang.VRHospital.bean.ZhiShiInfo;
+import com.yuyang.VRHospital.bean.ZhiShiBean;
 import com.yuyang.VRHospital.common.Contants;
 import com.yuyang.VRHospital.presenter.MedicalDataPresenterImpl;
 import com.yuyang.VRHospital.presenter.iPresenter.IMedicalDataPresenter;
@@ -35,7 +30,6 @@ import com.yuyang.VRHospital.view.adapter.MedicalDataAdapter;
 import com.yuyang.VRHospital.view.fragment.iFragment.IMedicalDataDbFragment;
 import com.yuyang.VRHospital.view.widget.ListDialog;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -164,7 +158,7 @@ public class MedicalDataDbFragment extends BaseFragment  implements SwipeRefresh
 
         adapter.setOnItemClickListener(new MedicalDataAdapter.OnRecyclerViewItemClickListener() {
             @Override
-            public void onItemClick(View view, ZhiShiInfo dataBean) {
+            public void onItemClick(View view, ZhiShiBean dataBean) {
 
                 //Toast.makeText(getActivity(), dataBean.getTitle(), 600).show();
                 Intent intent = new Intent(getActivity(), DiagnoseExplainActivity.class);
@@ -352,12 +346,12 @@ public class MedicalDataDbFragment extends BaseFragment  implements SwipeRefresh
     }
 
     @Override
-    public void setListData(List<ZhiShiInfo> result) {
+    public void setListData(List<ZhiShiBean> result) {
         adapter.setDataBeans(result);
     }
 
     @Override
-    public void addListData(List<ZhiShiInfo> result) {
+    public void addListData(List<ZhiShiBean> result) {
         adapter.addDataBeans(result);
     }
     @Override

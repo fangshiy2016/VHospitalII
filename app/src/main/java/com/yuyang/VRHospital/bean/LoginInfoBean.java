@@ -12,7 +12,7 @@ import java.util.List;
  * @author CreditEase/FSO
  *
  */
-public class LoginInfo {
+public class LoginInfoBean {
 
     //{"code":"test001","floderID":7,"name":"test001","passWord":"111111","userType":"","userGroupCode":"tuijianzhuangjia",
     // "userGroupName":"A类专家","age":12,"gender":0,"country":"中国","countryCode":"86","aeraProvince":"北京市",

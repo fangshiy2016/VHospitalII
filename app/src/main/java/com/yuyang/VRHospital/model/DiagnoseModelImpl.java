@@ -27,10 +27,6 @@ public class DiagnoseModelImpl implements IDiagnoseModel {
 
     @Override
     public void loadDiagnoseContent(String questionCode) {
-        //Map<String,String> params = new HashMap<>();
-
-       // params.put(ParamsConstants.STEP_CODE,  code);
-        //params = ParamsManage.addCommonParams(params);
         String urlParam="?Code=" + questionCode;
         Http.get(Url.URL_QUESTION_STEP + urlParam, listener);
     }

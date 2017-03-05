@@ -1,6 +1,5 @@
 package com.yuyang.VRHospital.view.adapter;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,21 +12,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.yuyang.VRHospital.R;
-import com.yuyang.VRHospital.bean.MedicalDataBean;
-import com.yuyang.VRHospital.bean.ZhiShiInfo;
+import com.yuyang.VRHospital.bean.ZhiShiBean;
 import com.yuyang.VRHospital.common.Contants;
 import com.yuyang.VRHospital.view.activity.DiagnoseExplainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
-
 /**
  * Created by yuyang on 16/4/21.
  */
 public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener{
-    private List<ZhiShiInfo> dataBeans = new ArrayList<>();
+    private List<ZhiShiBean> dataBeans = new ArrayList<>();
     private int loadState = Contants.CAN_LOAD_MORE;
     private int TYPE_ITEM = 0;
     private int TYPE_FOOT = 1;
@@ -43,14 +39,14 @@ public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return loadState;
     }
 
-    public void setDataBeans(List<ZhiShiInfo> beans){
+    public void setDataBeans(List<ZhiShiBean> beans){
         if(beans != null) {
             this.dataBeans = beans;
             notifyDataSetChanged();
         }
     }
 
-    public void addDataBeans(List<ZhiShiInfo> beans){
+    public void addDataBeans(List<ZhiShiBean> beans){
         if(beans != null){
             dataBeans.addAll(beans);
             notifyDataSetChanged();
@@ -68,7 +64,7 @@ public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private OnRecyclerViewItemClickListener mOnItemClickListener = null;
     public static interface OnRecyclerViewItemClickListener {
-        void onItemClick(View view , ZhiShiInfo dataBean);
+        void onItemClick(View view , ZhiShiBean dataBean);
     }
 
     private Context mContent;
@@ -87,7 +83,7 @@ public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 public void onClick(View v) {
 
                     View view = (View)v.getParent().getParent();
-                    ZhiShiInfo dataBean = (ZhiShiInfo)view.getTag();
+                    ZhiShiBean dataBean = (ZhiShiBean)view.getTag();
 
                     Intent intent = new Intent(mContent, DiagnoseExplainActivity.class);
                     Bundle b = new Bundle();
@@ -109,7 +105,7 @@ public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof  MedicalDataHolder) {
             MedicalDataHolder viewHolder = (MedicalDataHolder) holder;
-            ZhiShiInfo dataBean = dataBeans.get(position);
+            ZhiShiBean dataBean = dataBeans.get(position);
             viewHolder.itemView.setTag(dataBean);//绑定数据
 
             viewHolder.name.setText(dataBean.getTitle());
@@ -133,7 +129,7 @@ public class MedicalDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onClick(View v) {
         if (mOnItemClickListener != null) {
             //注意这里使用getTag方法获取数据ZhiShiInfo dataBean
-            mOnItemClickListener.onItemClick(v, (ZhiShiInfo)v.getTag());
+            mOnItemClickListener.onItemClick(v, (ZhiShiBean)v.getTag());
         }
     }
 

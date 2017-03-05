@@ -3,7 +3,7 @@ package com.yuyang.VRHospital.bean;
 /**
  * Created by fanshy on 2016/6/26.
  */
-public class JianCeInfo {
+public class JianCeBean {
     //{"floderID":78,"id":5,"code":" HPV JC1","name":"HPV 血常规 ","zsCode":"","desc":"HPV 血常规 HPV 血常规 HPV 血常规 HPV 血常规
     //<br>"}
     int     id;

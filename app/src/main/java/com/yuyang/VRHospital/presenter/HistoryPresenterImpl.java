@@ -1,7 +1,7 @@
 package com.yuyang.VRHospital.presenter;
 
 import com.yuyang.VRHospital.bean.HistoryItemBean;
-import com.yuyang.VRHospital.model.HistoryModelImple;
+import com.yuyang.VRHospital.model.HistoryModelImpl;
 import com.yuyang.VRHospital.model.iModel.IHistoryModel;
 import com.yuyang.VRHospital.network.listener.CallbackListener;
 import com.yuyang.VRHospital.presenter.iPresenter.IHistoryPresenter;
@@ -20,7 +20,7 @@ public class HistoryPresenterImpl implements IHistoryPresenter {
 
     public HistoryPresenterImpl(IHistoryActivity activity){
         this.historyActivity = activity;
-        this.historyModel = new HistoryModelImple();
+        this.historyModel = new HistoryModelImpl();
     }
 
     @Override

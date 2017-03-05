@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by fanshy on 2016/6/26.
  */
-public class KeshiInfo implements Serializable{
+public class KeshiBean implements Serializable{
     //{"id":2,"code":"lanke1","zyCode":"fenglei2","name":"男科","desc":"男科","zhiShiCode":""
     int     id;
     String  code;

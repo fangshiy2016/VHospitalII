@@ -1,6 +1,6 @@
 package com.yuyang.VRHospital.presenter;
 
-import com.yuyang.VRHospital.bean.ConditionInfo;
+import com.yuyang.VRHospital.bean.ConditionBean;
 import com.yuyang.VRHospital.bean.MedicalDataBean;
 import com.yuyang.VRHospital.bean.MedicalDataByFolderBean;
 import com.yuyang.VRHospital.bean.QueryZhishiContionBean;
@@ -10,9 +10,6 @@ import com.yuyang.VRHospital.model.iModel.IMedicalDataModel;
 import com.yuyang.VRHospital.network.listener.CallbackListener;
 import com.yuyang.VRHospital.presenter.iPresenter.IMedicalDataPresenter;
 import com.yuyang.VRHospital.view.fragment.iFragment.IMedicalDataDbFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by yuyang on 16/4/21.
@@ -43,7 +40,7 @@ public class MedicalDataPresenterImpl implements IMedicalDataPresenter {
         mConditionBean.setPageSize(PAGE_SIZE);
         //mConditionBean.setOrder("desc");
         if(condition != null) {
-            ConditionInfo conditionInfo = new  ConditionInfo();
+            ConditionBean conditionInfo = new ConditionBean();
             conditionInfo.setKeyWord(condition);
             conditionInfo.setTitle(condition);
             mConditionBean.setConditions(conditionInfo);

@@ -9,13 +9,13 @@ import java.util.List;
  */
 public class MedicalDataByFolderBean  extends BaseBean {
 
-    List<ZhiShiInfo> result;
+    List<ZhiShiBean> result;
 
-    public List<ZhiShiInfo> getResult() {
+    public List<ZhiShiBean> getResult() {
         return result;
     }
 
-    public void setResult(List<ZhiShiInfo> result) {
+    public void setResult(List<ZhiShiBean> result) {
         this.result = result;
     }
 }

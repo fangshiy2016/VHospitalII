@@ -1,13 +1,9 @@
 package com.yuyang.VRHospital.view.fragment;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.ActionBarOverlayLayout;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.view.Window;
@@ -15,11 +11,8 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,29 +20,23 @@ import com.yuyang.VRHospital.BaseFragment;
 import com.yuyang.VRHospital.R;
 import com.yuyang.VRHospital.bean.CheckLogicBean;
 import com.yuyang.VRHospital.bean.DiagnoseItemBean;
-import com.yuyang.VRHospital.bean.LoginBean;
-import com.yuyang.VRHospital.bean.LoginInfo;
+import com.yuyang.VRHospital.bean.LoginInfoBean;
 import com.yuyang.VRHospital.bean.zhenDuanTemplate;
 import com.yuyang.VRHospital.cache.sp.SPDao;
 import com.yuyang.VRHospital.cache.sp.SPKey;
 import com.yuyang.VRHospital.presenter.CheckLogicPresenterImpl;
 import com.yuyang.VRHospital.presenter.DiagnosePresenterImpl;
 import com.yuyang.VRHospital.presenter.iPresenter.IDiagnosePresenter;
-import com.yuyang.VRHospital.utils.CropImage;
 import com.yuyang.VRHospital.view.activity.DiagnoseResultActivity;
-import com.yuyang.VRHospital.view.adapter.DialogAdapter;
 import com.yuyang.VRHospital.view.form.DynamicFormHelper;
 import com.yuyang.VRHospital.view.fragment.iFragment.IDiagnoseFragment;
 import com.yuyang.VRHospital.view.widget.ListDialog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import butterknife.Bind;
-
-import static android.support.v4.content.PermissionChecker.checkSelfPermission;
 
 /**
  * Created by yuyang on 16/4/19.
@@ -102,7 +89,7 @@ public class DiagnoseFragment extends BaseFragment implements IDiagnoseFragment 
         diagnosePresenter   = new DiagnosePresenterImpl(this);
         checkLogicPresenter = new CheckLogicPresenterImpl(this);
 
-        LoginInfo logininfo = SPDao.getObject(SPKey.ZHENDUN_TEMPLATES, LoginInfo.class);
+        LoginInfoBean logininfo = SPDao.getObject(SPKey.ZHENDUN_TEMPLATES, LoginInfoBean.class);
         if(logininfo == null) return ;
         mStepList = logininfo.getZhenDuanTemplates();
         if(mStepList == null) return ;

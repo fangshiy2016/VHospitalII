@@ -3,7 +3,7 @@ package com.yuyang.VRHospital.bean;
 /**
  * Created by fanshy on 2016/6/26.
  */
-public class ZhiLiaoInfo {
+public class ZhiLiaoBean {
     //[{"code":"HPVZL1","title":"HPV 治疗 ","keyWord":"HPV 治疗 ","content":"HPV 治疗 HPV 治疗 HPV 治疗
     //<br>","floderID":79}
     String  code;

@@ -2,11 +2,9 @@ package com.yuyang.VRHospital.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,15 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.util.Util;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.yuyang.VRHospital.BaseActivity;
 import com.yuyang.VRHospital.R;
 import com.yuyang.VRHospital.bean.CaseItemBean;
-import com.yuyang.VRHospital.bean.JianCeInfo;
 import com.yuyang.VRHospital.bean.ResultBean;
 import com.yuyang.VRHospital.bean.ResultItemBean;
-import com.yuyang.VRHospital.bean.ZhiLiaoInfo;
 import com.yuyang.VRHospital.cache.sp.SPDao;
 import com.yuyang.VRHospital.cache.sp.SPKey;
 import com.yuyang.VRHospital.network.Url;
@@ -30,12 +24,9 @@ import com.yuyang.VRHospital.presenter.CaseSavePresenterImpl;
 import com.yuyang.VRHospital.presenter.ResultPresenterImpl;
 import com.yuyang.VRHospital.presenter.iPresenter.ICaseSavePresenter;
 import com.yuyang.VRHospital.presenter.iPresenter.IResultPresenter;
-import com.yuyang.VRHospital.utils.XmlParseUtil;
 import com.yuyang.VRHospital.utils.encrypt.RandomCode;
 import com.yuyang.VRHospital.view.activity.iView.IDiagnoseResultActivity;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -220,7 +211,7 @@ public class DiagnoseResultActivity extends BaseActivity implements IDiagnoseRes
 
         //String jianceInfo = "";
         //if(resultBean.getResult().getJianCeXiangList() != null){
-        //    for(JianCeInfo item:resultBean.getResult().getJianCeXiangList()) {
+        //    for(JianCeBean item:resultBean.getResult().getJianCeXiangList()) {
         //        if(jianceInfo != "") jianceInfo += ",";
 
         //        jianceInfo += item.getName();
@@ -230,7 +221,7 @@ public class DiagnoseResultActivity extends BaseActivity implements IDiagnoseRes
         //}
         /*
         if(resultBean.getResult().getZhiLiaoXiangList() != null){
-            for(ZhiLiaoInfo item:resultBean.getResult().getZhiLiaoXiangList()) {
+            for(ZhiLiaoBean item:resultBean.getResult().getZhiLiaoXiangList()) {
 
                 zhiliaoBeans.add(new ResultItemBean(item.getTitle(), XmlParseUtil.TrimHtmltag(item.getContent())));
             }

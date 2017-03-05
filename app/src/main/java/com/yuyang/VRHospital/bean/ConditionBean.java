@@ -3,7 +3,7 @@ package com.yuyang.VRHospital.bean;
 /**
  * Created by fanshy on 2016/7/1.
  */
-public class ConditionInfo {
+public class ConditionBean {
     String title;
     String keyWord;
 

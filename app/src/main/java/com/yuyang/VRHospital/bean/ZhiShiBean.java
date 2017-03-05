@@ -3,7 +3,7 @@ package com.yuyang.VRHospital.bean;
 /**
  * Created by fanshy on 2016/6/26.
  */
-public class ZhiShiInfo {
+public class ZhiShiBean {
     //{"code":"HPV_CS_1","floderID":1,"title":"测试知识","keyWord":"测试知识 ","vipCotent":"测试知识 测试知识 测试知识 测试知识 测试知识 ","userContent":"测试知识 测试知识 测试知识
     //<br>","dtContent":"测试知识 测试知识 测试知识
     //<br>"}

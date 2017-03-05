@@ -1,40 +1,16 @@
 package com.yuyang.VRHospital.view.adapter;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import java.io.BufferedInputStream;
-import java.net.URLConnection;
-
-import android.app.Activity;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.media.Image;
-import android.net.Uri;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView.LayoutParams;
-import android.widget.CheckBox;
+import android.view.ViewGroup;;
 import android.widget.ImageView;
-import android.widget.GridView;
 
 import com.yuyang.VRHospital.R;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.Target;
 import com.yuyang.VRHospital.network.Url;
-import com.yuyang.VRHospital.view.GridItem;
-
 import com.yuyang.VRHospital.utils.ImageLoaderUtils;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -106,14 +82,6 @@ public class GridAdapter extends BaseAdapter {
         View view = View.inflate(mContext, R.layout.layout_form_grid_item, null);
         ImageView imageView   = (ImageView) view.findViewById(R.id.grid_item_img);
         ImageView imgSelectView   = (ImageView) view.findViewById(R.id.grid_item_img_select);
-
-        //imgSelectView.setScaleType(ImageView.ScaleType.CENTER);
-        //imageView.setScaleType(ImageView.ScaleType.FIT_START);
-
-        //DisplayMetrics dm = new DisplayMetrics();
-        //((Activity)mContext).getWindowManager().getDefaultDisplay().getMetrics(dm);
-        //int height = (dm.widthPixels-20)/3 ;
-        //convertView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, height));
 
         imgSelectView.setVisibility(View.INVISIBLE);
         String imageUrl = mImagePaths[position];
