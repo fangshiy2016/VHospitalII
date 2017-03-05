@@ -5,4 +5,6 @@ package com.yuyang.VRHospital.presenter.iPresenter;
  */
 public interface ICachePresenter {
     void downloadImage(String imageUrl, String localPath);
+
+    void activateAccount(String userCode, String tel, String deviceNumber);
 }

@@ -1,16 +1,24 @@
 package com.yuyang.VRHospital.view.activity;
 
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +30,9 @@ import com.yuyang.VRHospital.cache.sp.SPDao;
 import com.yuyang.VRHospital.cache.sp.SPKey;
 import com.yuyang.VRHospital.network.http.BaseHttp;
 import com.yuyang.VRHospital.presenter.CachePresenterImpl;
+import com.yuyang.VRHospital.presenter.HomeLogicPresenterImpl;
 import com.yuyang.VRHospital.presenter.LoginPresenterImpl;
+import com.yuyang.VRHospital.presenter.iPresenter.IHomeLogicPresenter;
 import com.yuyang.VRHospital.utils.ImageLoaderUtils;
 import com.yuyang.VRHospital.view.CircleImageView;
 import com.yuyang.VRHospital.view.activity.iView.ILoginActivity;
@@ -48,6 +58,9 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     @Bind(R.id.et_user_password)
     EditText user_pass;
 
+    @Bind(R.id.btn_login)
+    Button mBtnLogin;
+
     @Bind(R.id.btn_register)
     Button btnRegister;
 
@@ -60,6 +73,9 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     ProgressDialog progressDialog;
     private CachePresenterImpl cachePresenter;
     private LoginPresenterImpl loginPresenter;
+    private PopupWindow popupWindow;
+    private String mUserCode;
+    private String mTelNum;
 
     @Override
     public void initLayoutId() {
@@ -69,7 +85,7 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     @Override
     public void initViews() {
         loginPresenter = new LoginPresenterImpl(this);
-        cachePresenter = new CachePresenterImpl();
+        cachePresenter = new CachePresenterImpl(this);
         progressDialog = new ProgressDialog(this);
         title.setText(R.string.login_bar_title);
         btnRegister.setVisibility(View.INVISIBLE);
@@ -84,9 +100,17 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
             docHeaderImage.setImageURI(Uri.fromFile(new File(headPath)));
         }
 
-
         mUserName.setText(SPDao.getSharedPreferences(SPKey.USER_NAME, ""));
         mToolbarBack.setVisibility(View.VISIBLE);
+
+        View popupContent = LayoutInflater.from(this).inflate(R.layout.layout_activation_popup,null);
+        popupWindow = new PopupWindow(popupContent,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(false);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.update();
+        initPopupItemClickListener(popupContent);
     }
 
     private void toastMsg(String msg) {
@@ -127,11 +151,7 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     @Override
     public void toMainActivity(LoginBean user) {
 
-        if(user.getCode().compareTo("2") == 0) {
-
-            toastMsg("登陆失败，" + user.getMessage());
-            return ;
-        }
+        int loginStatus = Integer.parseInt(user.getCode());
        // toastMsg("登陆成功，页面跳转");
         SPDao.saveSharedPreferences(SPKey.USER_NAME, user.getResult().getName());
         SPDao.saveSharedPreferences(SPKey.USER_CODE,  user.getResult().getCode());
@@ -153,7 +173,70 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
         if(zdTemp != null && zdTemp.size() > 0)
             SPDao.saveSharedPreferences(SPKey.QUESTION_CODE, zdTemp.get(0).getCode());
 
+        switch (loginStatus) {
+            case 1:
+                break;
+            case 2:
+                Toast.makeText(this, R.string.home_pass_error, Toast.LENGTH_SHORT).show();
+                return ;
+            case 3:
+                mUserCode =  user.getResult().getCode();
+                mTelNum = user.getResult().getTel();
+                if (Build.VERSION.SDK_INT >= 20) {
+                    popupWindow.showAtLocation(mBtnLogin, Gravity.BOTTOM, 0, getSoftButtonsBarHeight());
+                }else{
+                    popupWindow.showAtLocation(mBtnLogin, Gravity.BOTTOM, 0, 0);
+                }
+                return ;
+            case 4:
+                Toast.makeText(this, R.string.home_not_bangding, Toast.LENGTH_SHORT).show();
+                break;
+            case 5:
+                Toast.makeText(this, R.string.home_account_invalid, Toast.LENGTH_SHORT).show();
+                break;
+        }
         gotoMainActivity(user.getCode());
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private int getSoftButtonsBarHeight() {
+        DisplayMetrics metrics = new DisplayMetrics();
+        //TODO yuyang 这个方法获取可能不是真实屏幕的高度
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int usableHeight = metrics.heightPixels;
+        //TODO yuyang 获取当前屏幕的真实高度
+        getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
+        int realHeight = metrics.heightPixels;
+        if (realHeight > usableHeight) {
+            return realHeight - usableHeight;
+        } else {
+            return 0;
+        }
+    }
+
+    private boolean initPopupItemClickListener(View popupContent) {
+        View tvActiv = popupContent.findViewById(R.id.view_actaivation);
+        tvActiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TelephonyManager tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+                String deviceid = tm.getDeviceId();//获取智能设备唯一编号
+                String te1  = tm.getLine1Number();//获取本机号码
+                //String imei = tm.getSimSerialNumber();//获得SIM卡的序号
+                //String imsi = tm.getSubscriberId();//得到用户Id
+                cachePresenter.activateAccount(mUserCode, mTelNum, deviceid);
+
+            }
+        });
+        View cancel = popupContent.findViewById(R.id.view_cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+        return true;
     }
 
     public void showHttpProgress() {
@@ -174,6 +257,17 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
         if(progressDialog != null)
         {
             progressDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void toMainActivity(boolean isActive){
+        popupWindow.dismiss();
+        if(isActive){
+            gotoMainActivity("1");
+        }
+        else {
+            gotoMainActivity("3");
         }
     }
 

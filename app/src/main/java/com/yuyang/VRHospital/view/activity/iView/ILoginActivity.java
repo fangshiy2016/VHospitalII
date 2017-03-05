@@ -15,6 +15,7 @@ public interface ILoginActivity {
      */
     void toMainActivity(LoginBean user);
 
+    void toMainActivity(boolean isActive);
     void showHttpProgress();
     void closeHttpProgress();
 }
